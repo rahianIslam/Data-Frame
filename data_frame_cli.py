@@ -16,11 +16,11 @@ def print_heading(text):
 parser = argparse.ArgumentParser(description="Inspecting csv files with Pandas DataFrame methods.")
 parser.add_argument('csv_filename', help='A (nice) csv file.')
 
-parser.add_argument('-t','--head',metavar='', help='Print dataframe head'  )
-parser.add_argument('-i','--info',metavar='', help='Print dataframe info')
-parser.add_argument('-d','--describe ',metavar='[COLUMN_NAME]', help='Print dataframe statistics. If COLUMN_NAME provided, print statistics of selected column only.')
-parser.add_argument('-u','--unique',metavar='[COLUMN_NAME]', help='print unique values of column COLUMN_NAME.')
-parser.add_argument('-p','--plot_histogram',metavar='[COLUMN_NAME]', help='Plot histogram of column COLUMN_NAME')
+parser.add_argument('-t','--head', help='Print dataframe head',action = 'store_true' )
+parser.add_argument('-i','--info', help='Print dataframe info', action = 'store_true')
+parser.add_argument('-d','--describe',action = 'store_true', help='Print dataframe statistics. If COLUMN_NAME provided, print statistics of selected column only.')
+parser.add_argument('-u','--unique', metavar='[COLUMN_NAME]', help='print unique values of column COLUMN_NAME.')
+parser.add_argument('-p','--plot_histogram',metavar='[COLUMN_NAME]',  help='Plot histogram of column COLUMN_NAME')
 parser.add_argument('-o','--plot_filename',metavar='[FILENAME]', help='Save histogram plot (-p COLUMN_NAME) to file FILENAME')
 
 
@@ -37,19 +37,25 @@ def print_info(info):
     print('\n{} df.info() {}\n'.format('*'*3, '*'*3) )
     print(df.info())
 
+def print_head(head):
+    print('\n{} df.head() {}\n'.format('*'*3, '*'*3) )
+    print(df.head())
 
+def print_describe(describe):
+    print('\n{} df.describe() {}\n'.format('*'*3, '*'*3) )
+    print(df.describe())
 
 
 print_heading('df.shape')
 print('{} loaded with shape {}'.format(args.csv_filename, df.shape))
 
-# if args.info == '-i':
-#     print_info(args.info)
+if args.info:
+    print_info(args.info)
 
-print_info(args.info)
-# print_heading('df.heading')
-# print(df.head())
-# print_heading('df.info')
-# print(df.info())
+if args.head:
+    print_head(args.head)
+
+if args.describe:
+    print_describe(args.describe)
 
 
