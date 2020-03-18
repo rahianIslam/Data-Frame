@@ -3,7 +3,7 @@ Create a command line interface to common Pandas DataFrame methods for inspectin
 
 __Due: Tuesday March 17, noon, code on github, HTTPS link on D2L__
 
-Author: Yves Pauchard
+Author: Rahian Islam
 # Problem statement
 With data in csv files, Pandas DataFrame methods can be used for inspection. These are common steps:
 1. Check dimension `df.shape`
