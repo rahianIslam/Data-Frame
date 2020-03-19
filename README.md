@@ -138,5 +138,15 @@ Name: diet, dtype: object
 
 
 # How to run this program
-_Add your instructions and screenshot here_
+It is very easy to run the programs. This is just as easy as the other user interface programs.
+You have to make surer all the files you want to work with is in the same directory.
+and then type in 'python (name of this file) (command of what you want to do) (optional arguments)
+
+screenshots are attached here:
+
+![Example screenshot](SS1.png)
+![Example screenshot](SS2.png)
+![Example screenshot](SS3.png)
+![Example screenshot](SS4.png)
+![Example screenshot](SS5.png)
 
